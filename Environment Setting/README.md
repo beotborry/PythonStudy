@@ -43,3 +43,5 @@ Anaconda Prompt / Terminal 에서 다음 코드가 정상적으로 작동한다�
 
 ### Create Project in Pycharm with Virtual Environment
 
+![](./img/1.png)
+
