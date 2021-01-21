@@ -24,7 +24,7 @@ Vim Editor를 활용하여 bashrc 파일을 열어줍니다.
 
 bashrc 파일 안에 다음 행을 추가해줍니다.
 
-    export PATH="/home/usr/anaconda3/bin:$PATH"
+    export PATH="/opt/anaconda3/bin:$PATH"
 
 다음 코드로 수정사항을 반영해줍니다.
 
