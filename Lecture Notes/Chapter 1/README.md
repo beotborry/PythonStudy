@@ -115,5 +115,53 @@ C에서 `printf`와 유사한 방식으로 Python에서도 출력을 할 수 있
 
 작동방식 및 사용되는 Escape Sequence 들은 동일합니다.
 
+대신, C에서 값을 넘겨줄 때, `,` 뒤에 값을 입력해줬다면, Python에서는 `%` 를 이용합니다.
+
     >>> "This is %d dollar" % 3
     'This is 3 dollar'
+    
+
+`format` 함수를 이용해서도 Formatting을 할 수 있습니다.
+
+    >>> number = 10
+    >>> day = "three"
+    >>> "I ate {0} apples. so I was sick for {1} days.".format(number, day)
+    'I ate 10 apples. so I was sick for three days.'
+
+위 코드 같은 경우 인덱스를 이용한 Formatting 입니다. 중괄호 안에 숫자가 각각의 Index를 의미하고, 0번째에는 `number` 변수의 값이, 1번째에는 `day` 변수의 값이 각각 들어간 것을 확인할 수 있습니다.
+
+이름을 이용해서 Formatting을 할 수도 있습니다.
+
+    >>> "I ate {number} apples. so I was sick for {day} days.".format(number = 3, day = "three")
+    'I ate 3 apples. so I was sick for three days.'
+
+마지막으로 f 문자열 Formatting을 보겠습니다.
+
+    >>> name = '홍길동'
+    >>> age = 30
+    >>> f'나의 이름은 {name}입니다. 나이는 {age}입니다.'
+    '나의 이름은 홍길동입니다. 나이는 30입니다.'
+
+위와 같이 문자열 앞에 `f`를 붙이면 문자열 Formatting 기능을 사용할 수 있습니다.
+
+### Frequently Used Function
+
+문자열과 관련해서 자주 사용되는 함수를 몇 개 소개하겠습니다.
+
+#### Replace
+
+    >>> a = "Life is too short"
+    >>> a.replace("Life", "Your leg")
+    'Your leg is too short'
+
+`replace(A, B)` 에서 A에 해당하는 부분을 B로 바꾸어줍니다.
+
+#### Split
+
+    >>> b = "a:b:c:d"
+    >>> b.split(':')
+    ['a', 'b', 'c', 'd']
+
+문자열을 주어진 delimeter에 따라 나누어서 리스트 형태로 반환합니다.
+
+
