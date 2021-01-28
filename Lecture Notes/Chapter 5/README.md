@@ -81,4 +81,16 @@ Chapter 5
 
 #### Method Overriding
 
+상속을 받은 새로운 클래스 안에서 기존에 존재하던 함수를 재정의 할 수 있습니다. 이를 메서드 오버라이딩이라고 합니다. 이 때, 그 함수를 호출을 하면 새롭게 정의된 함수가 호출이 됩니다.
 
+    >>> class NewCalc(Calc):
+    ...     def add(self):
+    ...             print("New Function!")
+    ...             return self.first + self.second
+
+    >>> new_calculator = NewCalc(2, 3)
+    >>> new_calculator.add()
+    New Function!
+    5
+
+기존 `Calc` 클래스가 가지고 있던 `add` 메서드를 `NewCalc` 안에서 오버라이딩을 했고, 실제로 `add` 함수를 호출하면 새롭게 정의된 함수가 호출이 되면서 "New Function!"이 출력된 것을 확인할 수 있습니다.
