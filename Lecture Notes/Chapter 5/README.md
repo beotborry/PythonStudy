@@ -35,5 +35,50 @@ Chapter 5
 
 클래스를 정의한 후 `Calc(2, 3)`을 이용하여 객체를 만들었고, 생성자가 호출되면서 `calculator`라는 객체 안의 변수 `first`, `second`에 각각 2와 3이 할당된 것을 확인할 수 있습니다.
 
+#### Method
+
+클래스 안에서 정의되는 함수들을 메서드(Method)라고 합니다. 다음 코드를 살펴봅시다.
+
+    >>> class Calc():
+    ...     def __init__(self, first, second):
+    ...             self.first = first
+    ...             self.second = second
+    ...     def add(self):
+    ...             return self.first + self.second
+
+    >>> calculator = Calc(2, 3)
+    >>> calculator.add()
+    5
+
+클래스 안에서 정의되는 메서드들은 기본적으로 `self`를 첫 argument로 가집니다. 위 코드에서는 `add` 메서드를 추가하였습니다. 객체가 가지고 있는 `first`, `second`의 값은 객체가 만들어질 때 constructor에 의해서 할당이 되기 때문에 `add` 함수에서는 따로 그 값들을 받을 필요가 없습니다. 함수 안에서 `self.first`, `self.second`를 통해 객체가 가지고 있는 변수들의 값을 가지고 오고 그 둘을 더한다음에 반환합니다.
+
+#### 클래스 상속 (Inheritance)
+
+파이썬에도 다른 객체 지향 언어와 유사하게 클래스 상속을 지원하고 있습니다. 클래스 상속은 기존에 있던 클래스의 기능들을 그대로 유지하면서 추가적인 기능을 구현하고자 할 때 사용됩니다. 클래스 상속 방식은 다음과 같습니다.
+
+    >>> class NewCalc(Calc):
+    ...     pass
+
+`NewCalc` 뒤에 오는 소괄호 안에 상속의 대상이 되는 클래스의 이름을 적음으로써 상속을 구현할 수 있습니다.
+
+    >>> new_calculator = NewCalc(2, 3)
+    >>> new_calculator.add()
+    5
+
+그리고 위 코드를 보면 기존에 `Calc` 클래스가 가지고 있던 메서드들이 그대로 유지되어 사용 가능한 것을 확인할 수 있습니다.
+
+이번에는 새로운 메서드를 추가해보겠습니다.
+
+    >>> class NewCalc(Calc):
+    ...     def pow(self, n):
+    ...             return self.first ** n, self.second ** n
+
+    >>> new_calculator = NewCalc(2, 3)
+    >>> new_calculator.pow(2)
+    (4, 9)
+
+거듭제곱을 수행하는 `pow` 메서드를 추가해보았습니다. argument로 `n`을 받아서 객체가 가지고 있는 `self.first`, `self.second` 각각을 n번 거듭제곱한 값을 반환합니다.
+
+#### Method Overriding
 
 
